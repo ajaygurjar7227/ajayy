@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ajay Gurjar - Computer Science Student at Newton School of Technology (DY Patil University). Engineering software solutions for real-world problems through C++, Python, Game Logic, and Team Leadership.">
+  <meta name="keywords" content="Ajay Gurjar, Software Developer, Real-World Problem Solver, Newton School of Technology, DY Patil, C++, Python, Web Development, Scratch Game Dev">
+  <meta name="author" content="Ajay Gurjar">
+  <title>Ajay Gurjar | Engineering Real-World Software & Solutions</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+  <!-- Background Glow & Grid Canvas -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-username">@ajaygurjar</span>
+        <span class="logo-slash">/</span>
+        <span class="logo-bracket">&gt;</span>
+        <span class="status-dot-pulse" title="Ready to solve real-world problems"></span>
+      </a>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active-link">Home</a></li>
+          <li class="nav-item"><a href="#hero-sandbox" class="nav-link">Live Sandbox</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About & Bento</a></li>
+          <li class="nav-item"><a href="#case-studies" class="nav-link">Real-World Case Studies</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills Arsenal</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Milestones</a></li>
+          <li class="nav-item"><a href="#time-split" class="nav-link">Life & Routine</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta-mobile">
+          <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+        </div>
+
+        <button class="nav-close" id="nav-close" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Sound Effect Toggle -->
+        <button class="sound-btn" id="sound-toggle-btn" aria-label="Toggle UI Sound" title="Toggle UI sound effects">
+          <svg class="sound-on-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="sound-off-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-btn" id="theme-button" aria-label="Toggle theme" title="Toggle Dark/Light mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-outline btn-sm nav-cta-desktop">Hire Ajay</a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- HERO SECTION WITH CREATIVE REAL-WORLD PROBLEM SOLVER WORKSTATION -->
+    <section class="hero section" id="home">
+      <div class="hero-container container">
+        
+        <!-- Left Column: Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Solving Real-World Problems &bull; Newton School of Tech</span>
+          </div>
+
+          <div class="hero-user-tag">
+            <span class="tag-label">terminal:~$</span>
+            <span class="tag-command">whoami &rarr; <span class="highlight-username">@ajaygurjar</span></span>
+          </div>
+
+          <h1 class="hero-title">
+            Engineering Software That <span class="gradient-text">Solves Real Problems.</span>
+          </h1>
+
+          <div class="typewriter-box">
+            <span class="typewriter-prefix">I architect solutions with </span>
+            <span class="typewriter-text" id="typewriter">C++ Algorithms & System Logic</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Computer Science undergraduate at <strong>Newton School of Technology (DY Patil University)</strong>. 
+            I bridge theoretical algorithms and human-centered design to solve practical challenges — 
+            from multi-level game mechanics and team velocity bottlenecks to graph route optimization and peer financial tooling.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#case-studies" class="btn btn-primary">
+              <span>Real-World Case Studies</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#hero-sandbox" class="btn btn-secondary">
+              <span>Test Live Simulator</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Social Links Row -->
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <div class="social-links-list">
+              <a href="https://linkedin.com/in/ajay-gurjar-a28b0031b" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.54a1.69 1.69 0 1 0 0-3.38 1.69 1.69 0 0 0 0 3.38m1.4 9.96v-8.37H5.06v8.37h2.8z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:ajaygurjar7227@gmail.com" class="social-btn" aria-label="Send Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>ajaygurjar7227@gmail.com</span>
+              </a>
+              <div class="location-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Pune &bull; Jaipur, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats Pill Row -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-num">4</span>
+              <span class="stat-text">Real Case Studies</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-num">1</span>
+              <span class="stat-text">Team Game Shipped</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-num">100+</span>
+              <span class="stat-text">Logic Problems</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-text">Team Commitment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Real-World Problem Solver Deck -->
+        <div class="hero-interactive-wrapper" id="hero-sandbox">
+          <div class="interactive-workstation-container" id="interactive-hero-card">
+            <div class="workstation-inner">
+              
+              <!-- Glow Aura Behind Card -->
+              <div class="card-glow-layer"></div>
+
+              <!-- Top Status Bar & Simulator Tabs -->
+              <div class="workstation-header">
+                <div class="traffic-lights">
+                  <span class="light red"></span>
+                  <span class="light yellow"></span>
+                  <span class="light green"></span>
+                </div>
+
+                <div class="deck-tabs-nav" role="tablist">
+                  <button class="deck-tab active" data-deck="game" title="Live playable physics simulation">
+                    <span>🎮 Game Loop</span>
+                  </button>
+                  <button class="deck-tab" data-deck="route" title="Campus route optimizer algorithm">
+                    <span>🗺️ Route Solver</span>
+                  </button>
+                  <button class="deck-tab" data-deck="debt" title="Peer debt simplification algorithm">
+                    <span>💸 Split Debt</span>
+                  </button>
+                  <button class="deck-tab" data-deck="terminal" title="Interactive command prompt">
+                    <span>⚡ Terminal</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- DECK PANELS -->
+              <div class="deck-panels-viewport">
+                
+                <!-- PANEL 1: Playable Mini Game Canvas (Real-World Scratch & Physics Problem) -->
+                <div class="deck-panel active" id="panel-game">
+                  <div class="panel-meta-bar">
+                    <span class="meta-label">Real-World Problem:</span>
+                    <span class="meta-desc">60 FPS Collision Loop & Obstacle Avoidance Mechanics</span>
+                  </div>
+
+                  <div class="mini-game-wrapper">
+                    <canvas id="mini-game-canvas" width="400" height="210"></canvas>
+                    
+                    <div class="game-hud-overlay">
+                      <div class="hud-score">SCORE: <span id="game-score-display">0</span></div>
+                      <div class="hud-fps">FPS: <span id="game-fps-display">60</span></div>
+                      <div class="hud-status" id="game-status-display">PRESS JUMP TO START</div>
+                    </div>
+                  </div>
+
+                  <div class="game-controls-row">
+                    <button class="btn btn-sm btn-primary" id="game-jump-btn">
+                      <span>Jump (Space / Click) ⬆️</span>
+                    </button>
+                    <button class="btn btn-sm btn-secondary" id="game-restart-btn">
+                      <span>Restart 🔄</span>
+                    </button>
+                    <span class="game-hint">Tests event-driven collision detection</span>
+                  </div>
+                </div>
+
+                <!-- PANEL 2: Campus Route Optimizer (Graph Theory / Dijkstra Algorithm) -->
+                <div class="deck-panel" id="panel-route">
+                  <div class="panel-meta-bar">
+                    <span class="meta-label">Real-World Problem:</span>
+                    <span class="meta-desc">DY Patil Campus Congestion & Shortest Path Navigation</span>
+                  </div>
+
+                  <div class="route-map-container" id="route-map-container">
+                    <svg class="route-svg" viewBox="0 0 380 200" id="route-svg">
+                      <!-- Grid background lines -->
+                      <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+                        <line x1="0" y1="50" x2="380" y2="50"/>
+                        <line x1="0" y1="100" x2="380" y2="100"/>
+                        <line x1="0" y1="150" x2="380" y2="150"/>
+                      </g>
+                      
+                      <!-- Edges with weights -->
+                      <g class="graph-edges" stroke="rgba(0, 240, 255, 0.25)" stroke-width="2">
+                        <line x1="50" y1="100" x2="130" y2="40" id="edge-A-B" />
+                        <line x1="50" y1="100" x2="140" y2="160" id="edge-A-C" />
+                        <line x1="130" y1="40" x2="250" y2="50" id="edge-B-D" />
+                        <line x1="140" y1="160" x2="250" y2="150" id="edge-C-E" />
+                        <line x1="130" y1="40" x2="140" y2="160" id="edge-B-C" />
+                        <line x1="250" y1="50" x2="330" y2="100" id="edge-D-F" />
+                        <line x1="250" y1="150" x2="330" y2="100" id="edge-E-F" />
+                      </g>
+
+                      <!-- Node Vertices -->
+                      <!-- Node A: Hostel -->
+                      <g class="graph-node" data-node="A" transform="translate(50, 100)">
+                        <circle r="16" fill="#14142B" stroke="#00F0FF" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#00F0FF" font-size="10" font-weight="bold">Hostel</text>
+                      </g>
+                      <!-- Node B: CS Lab -->
+                      <g class="graph-node" data-node="B" transform="translate(130, 40)">
+                        <circle r="16" fill="#14142B" stroke="#8B5CF6" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#8B5CF6" font-size="9" font-weight="bold">CS Lab</text>
+                      </g>
+                      <!-- Node C: Cafeteria -->
+                      <g class="graph-node" data-node="C" transform="translate(140, 160)">
+                        <circle r="16" fill="#14142B" stroke="#EC4899" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#EC4899" font-size="8" font-weight="bold">Cafe</text>
+                      </g>
+                      <!-- Node D: Library -->
+                      <g class="graph-node" data-node="D" transform="translate(250, 50)">
+                        <circle r="16" fill="#14142B" stroke="#10B981" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#10B981" font-size="9" font-weight="bold">Library</text>
+                      </g>
+                      <!-- Node E: Sports Arena -->
+                      <g class="graph-node" data-node="E" transform="translate(250, 150)">
+                        <circle r="16" fill="#14142B" stroke="#F59E0B" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#F59E0B" font-size="8" font-weight="bold">Sports</text>
+                      </g>
+                      <!-- Node F: Auditorium -->
+                      <g class="graph-node" data-node="F" transform="translate(330, 100)">
+                        <circle r="16" fill="#14142B" stroke="#00F0FF" stroke-width="2.5"/>
+                        <text y="4" text-anchor="middle" fill="#00F0FF" font-size="8" font-weight="bold">Audi</text>
+                      </g>
+                    </svg>
+
+                    <div class="route-result-pill" id="route-result-display">
+                      <span>Select destination node to solve Dijkstra's shortest path</span>
+                    </div>
+                  </div>
+
+                  <div class="route-actions-row">
+                    <button class="btn btn-sm btn-primary" id="btn-route-dijkstra">
+                      <span>⚡ Solve: Hostel &rarr; Audi</span>
+                    </button>
+                    <button class="btn btn-sm btn-secondary" id="btn-route-cslab">
+                      <span>Hostel &rarr; CS Lab</span>
+                    </button>
+                    <span class="route-hint">Calculates minimum congestion paths</span>
+                  </div>
+                </div>
+
+                <!-- PANEL 3: FairShare Roommate Debt Simplifier -->
+                <div class="deck-panel" id="panel-debt">
+                  <div class="panel-meta-bar">
+                    <span class="meta-label">Real-World Problem:</span>
+                    <span class="meta-desc">Simplifying Tangled Student Roommate & Hackathon Debts</span>
+                  </div>
+
+                  <div class="debt-simulator-box">
+                    <div class="debt-visual-comparison">
+                      <div class="debt-col before">
+                        <span class="col-title red-txt">Before Optimization</span>
+                        <div class="tx-badge">Ajay owes Rahul: ₹800</div>
+                        <div class="tx-badge">Rahul owes Sneha: ₹500</div>
+                        <div class="tx-badge">Sneha owes Ajay: ₹300</div>
+                        <div class="tx-count">Total: <strong>3 Separate Transfers</strong></div>
+                      </div>
+
+                      <div class="debt-arrow-col">
+                        <span class="algo-pill">Greedy Debt Graph</span>
+                        <span class="arrow-symbol">&rarr;</span>
+                      </div>
+
+                      <div class="debt-col after">
+                        <span class="col-title green-txt">After Optimization (FairShare)</span>
+                        <div class="tx-badge solved">Ajay pays Rahul: ₹500</div>
+                        <div class="tx-badge solved">Rahul pays Sneha: ₹200</div>
+                        <div class="tx-count">Net: <strong>Only 2 Direct Transfers!</strong></div>
+                      </div>
+                    </div>
+
+                    <div class="debt-interactive-tool">
+                      <label class="tool-label">Test Real Amount: <strong>₹<span id="debt-amount-label">1200</span></strong></label>
+                      <input type="range" min="300" max="6000" step="300" value="1200" class="debt-slider" id="debt-slider">
+                      <p class="debt-math-result" id="debt-math-result">
+                        Reduces transaction overhead by <strong>66.7%</strong> & eliminates bank transfer fees.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL 4: Interactive Command Line Terminal -->
+                <div class="deck-panel" id="panel-terminal">
+                  <div class="panel-meta-bar">
+                    <span class="meta-label">Interactive Shell:</span>
+                    <span class="meta-desc">Type commands or click suggestions below</span>
+                  </div>
+
+                  <div class="cli-console" id="cli-console">
+                    <div class="cli-output" id="cli-output">
+                      <div class="cli-line">Welcome to Ajay Gurjar's interactive terminal [Version 2.4.0]</div>
+                      <div class="cli-line">Type <span class="cmd-highlight">help</span> for a list of available commands.</div>
+                    </div>
+                    
+                    <div class="cli-input-row">
+                      <span class="cli-prompt">ajay@portfolio:~$</span>
+                      <input type="text" id="cli-input" class="cli-input" placeholder="try: solve, skills, projects, contact..." autocomplete="off" spellcheck="false">
+                    </div>
+                  </div>
+
+                  <div class="cli-quick-chips">
+                    <button class="cli-chip" data-cmd="solve">⚡ solve</button>
+                    <button class="cli-chip" data-cmd="skills">🛠️ skills</button>
+                    <button class="cli-chip" data-cmd="projects">🚀 projects</button>
+                    <button class="cli-chip" data-cmd="whoami">👤 whoami</button>
+                    <button class="cli-chip" data-cmd="clear">🧹 clear</button>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Deck Footer Status -->
+              <div class="workstation-footer">
+                <div class="footer-chip">
+                  <span class="dot-live"></span>
+                  <span>Interactive Engine: Active</span>
+                </div>
+                <div class="footer-tech-stack">
+                  <span>HTML5 Canvas</span> &bull; <span>C++ Logic</span> &bull; <span>Vanilla JS</span>
+                </div>
+              </div>
+
+              <!-- 3D Specular Shine -->
+              <div class="card-shine" id="card-shine"></div>
+            </div>
+          </div>
+          
+          <div class="hero-card-caption">
+            <span class="mouse-icon">🖱️</span>
+            <span>Switch tabs above to test live interactive engineering prototypes</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CREATIVE BENTO GRID: ABOUT ME & ENGINEERING MINDSET -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;engineering-dna /&gt;</p>
+          <h2 class="section-title">Creative Mindset & <span class="gradient-text">Engineering DNA</span></h2>
+          <p class="section-desc">
+            How a computer science student at Newton School of Technology blends algorithmic rigor, teamwork, and creative perspectives.
+          </p>
+          <div class="section-underline"></div>
+        </div>
+
+        <!-- BENTO GRID -->
+        <div class="bento-grid">
+          
+          <!-- Bento 1: Core Identity & Academic Background -->
+          <div class="bento-card bento-span-2 glass-panel">
+            <div class="bento-header">
+              <span class="bento-tag">Academic Foundation</span>
+              <span class="bento-icon">🎓</span>
+            </div>
+            <h3 class="bento-title">Computer Science @ Newton School of Technology</h3>
+            <h4 class="bento-subtitle">In partnership with DY Patil University &bull; Pune, India</h4>
+            <p class="bento-text">
+              Immersed in an intensive software engineering curriculum engineered around production standards. 
+              Mastering Data Structures, Object-Oriented C++, Modern Web development, and full lifecycle project delivery.
+            </p>
+            <div class="bento-pills-row">
+              <span class="bpill">C++ & Algorithms</span>
+              <span class="bpill">Software Architecture</span>
+              <span class="bpill">Full-Stack Logic</span>
+              <span class="bpill">Agile Sprints</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Real-World Problem Philosophy -->
+          <div class="bento-card glass-panel bento-highlight-cyan">
+            <div class="bento-header">
+              <span class="bento-tag">The Philosophy</span>
+              <span class="bento-icon">💡</span>
+            </div>
+            <h3 class="bento-title">"Solve The Human Problem First, Then Write Code."</h3>
+            <p class="bento-text">
+              Great software isn't just syntax — it's removing friction for people. Every project I build starts with a real headache and ends with measurable impact.
+            </p>
+          </div>
+
+          <!-- Bento 3: Team Collaboration & Game Dev Leadership -->
+          <div class="bento-card glass-panel bento-highlight-purple">
+            <div class="bento-header">
+              <span class="bento-tag">Collaborative Leadership</span>
+              <span class="bento-icon">🤝</span>
+            </div>
+            <h3 class="bento-title">Team Coordination & Sprint Delivery</h3>
+            <p class="bento-text">
+              Demonstrated ability to synchronize peer developers, conduct daily standups, and resolve blocking bugs under tight hackathon deadlines.
+            </p>
+            <div class="metric-highlight">
+              <span class="metric-number">100%</span>
+              <span class="metric-desc">Commitment to team velocity & psychological safety</span>
+            </div>
+          </div>
+
+          <!-- Bento 4: Spoken Languages & Communication Fluency -->
+          <div class="bento-card bento-span-2 glass-panel">
+            <div class="bento-header">
+              <span class="bento-tag">Communication & Global Reach</span>
+              <span class="bento-icon">🗣️</span>
+            </div>
+            <h3 class="bento-title">Multi-Lingual Communication</h3>
+            <p class="bento-text">
+              Articulating complex technical concepts effortlessly to cross-functional teams, mentors, and diverse user groups.
+            </p>
+
+            <div class="languages-bento-grid">
+              <div class="lang-pill-card">
+                <div class="lang-top">
+                  <span class="lang-title">English</span>
+                  <span class="badge-proficient">Proficient</span>
+                </div>
+                <div class="lang-dots-bar">
+                  <span class="bar-fill" style="width: 85%;"></span>
+                </div>
+                <span class="lang-note">Technical writing, documentation & presentations</span>
+              </div>
+
+              <div class="lang-pill-card">
+                <div class="lang-top">
+                  <span class="lang-title">Hindi</span>
+                  <span class="badge-native">Native</span>
+                </div>
+                <div class="lang-dots-bar">
+                  <span class="bar-fill" style="width: 100%;"></span>
+                </div>
+                <span class="lang-note">Fluent conversational & collaboration</span>
+              </div>
+
+              <div class="lang-pill-card">
+                <div class="lang-top">
+                  <span class="lang-title">Marwari</span>
+                  <span class="badge-native">Native</span>
+                </div>
+                <div class="lang-dots-bar">
+                  <span class="bar-fill" style="width: 100%;"></span>
+                </div>
+                <span class="lang-note">Cultural heritage & regional fluency</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 5: Photography & Visual Eye -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <span class="bento-tag">Creative Vision</span>
+              <span class="bento-icon">📸</span>
+            </div>
+            <h3 class="bento-title">Photography & Visual Composition</h3>
+            <p class="bento-text">
+              A trained eye for framing, balance, and color grading that directly translates into pixel-perfect user interfaces and clean visual hierarchy.
+            </p>
+          </div>
+
+          <!-- Bento 6: Athletic Discipline (Basketball) -->
+          <div class="bento-card glass-panel">
+            <div class="bento-header">
+              <span class="bento-tag">Team Sports</span>
+              <span class="bento-icon">🏀</span>
+            </div>
+            <h3 class="bento-title">Basketball & Team Agility</h3>
+            <p class="bento-text">
+              Fast-break decision making, stamina, communication on court, and high resilience under high-pressure scenarios.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL-WORLD CASE STUDIES (EXPANDED REAL PROBLEMS) -->
+    <section class="case-studies section" id="case-studies">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;impact-driven-engineering /&gt;</p>
+          <h2 class="section-title">Real-World <span class="gradient-text">Engineering Case Studies</span></h2>
+          <p class="section-desc">
+            Breaking down practical challenges through structured architectural solutions, code design, and measurable results.
+          </p>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="case-studies-grid">
+          
+          <!-- CASE STUDY 1: Multi-Level Arcade Game (Scratch) -->
+          <article class="case-card glass-panel">
+            <div class="case-header">
+              <div class="case-number">CASE 01</div>
+              <div class="case-tag">Team Game Development &bull; Scratch 3.0</div>
+            </div>
+
+            <h3 class="case-title">Multi-Level 2D Arcade Adventure Game</h3>
+
+            <!-- Problem / Solution / Impact Triad -->
+            <div class="triad-container">
+              <div class="triad-box problem">
+                <div class="triad-title">
+                  <span class="triad-icon">🚨</span>
+                  <span>The Real-World Problem</span>
+                </div>
+                <p class="triad-text">
+                  Distributed 5-person student team with no prior shared game engine experience faced severe collision lag, sprite desynchronization, and unpredictable game loop drops during peak action sequences.
+                </p>
+              </div>
+
+              <div class="triad-box solution">
+                <div class="triad-title">
+                  <span class="triad-icon">⚙️</span>
+                  <span>Engineering Solution</span>
+                </div>
+                <p class="triad-text">
+                  Decoupled rendering from collision math using discrete broadcast ticks. Created a centralized state machine for score persistence, audio cue orchestration, and level transitions. Established daily standups to unblock teammate sprites.
+                </p>
+              </div>
+
+              <div class="triad-box impact">
+                <div class="triad-title">
+                  <span class="triad-icon">📈</span>
+                  <span>Measurable Impact</span>
+                </div>
+                <p class="triad-text">
+                  Maintained stable 60 FPS gameplay across all 4 stages. Zero fatal crashes on final demo day, earning highest marks for team coordination and game architecture in Pune.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-tech-footer">
+              <div class="case-tags">
+                <span class="tag">Scratch 3.0</span>
+                <span class="tag">Event Loops</span>
+                <span class="tag">State Machines</span>
+                <span class="tag">Collision Physics</span>
+                <span class="tag">Agile Leadership</span>
+              </div>
+              <a href="#hero-sandbox" class="case-action-btn" onclick="switchDeckTab('game')">
+                <span>Play Mini Simulator &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 2: Campus Route & Crowd Congestion Optimizer -->
+          <article class="case-card glass-panel">
+            <div class="case-header">
+              <div class="case-number">CASE 02</div>
+              <div class="case-tag">Graph Theory &bull; C++ &bull; Dijkstra's Algorithm</div>
+            </div>
+
+            <h3 class="case-title">Campus Route & Congestion Optimizer</h3>
+
+            <div class="triad-container">
+              <div class="triad-box problem">
+                <div class="triad-title">
+                  <span class="triad-icon">🚨</span>
+                  <span>The Real-World Problem</span>
+                </div>
+                <p class="triad-text">
+                  Students at Newton School / DY Patil lose 15-20 minutes between back-to-back lectures navigating crowded central stairwells and lab passages during peak hour schedule transitions.
+                </p>
+              </div>
+
+              <div class="triad-box solution">
+                <div class="triad-title">
+                  <span class="triad-icon">⚙️</span>
+                  <span>Engineering Solution</span>
+                </div>
+                <p class="triad-text">
+                  Modeled campus building topology as a weighted directed graph. Implemented Dijkstra's shortest path algorithm with dynamic edge weights factoring real-time crowd congestion and elevator wait states.
+                </p>
+              </div>
+
+              <div class="triad-box impact">
+                <div class="triad-title">
+                  <span class="triad-icon">📈</span>
+                  <span>Measurable Impact</span>
+                </div>
+                <p class="triad-text">
+                  Reduced theoretical inter-block transit time by up to 38%. Created an interactive visualizer assisting peer students in understanding graph traversal complexities.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-tech-footer">
+              <div class="case-tags">
+                <span class="tag">C++</span>
+                <span class="tag">Dijkstra's Algorithm</span>
+                <span class="tag">Adjacency Lists</span>
+                <span class="tag">Graph Traversal</span>
+                <span class="tag">Optimization</span>
+              </div>
+              <a href="#hero-sandbox" class="case-action-btn" onclick="switchDeckTab('route')">
+                <span>Run Route Simulation &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 3: FairShare - Peer-to-Peer Debt Simplifier -->
+          <article class="case-card glass-panel">
+            <div class="case-header">
+              <div class="case-number">CASE 03</div>
+              <div class="case-tag">Greedy Algorithm &bull; Financial Tooling</div>
+            </div>
+
+            <h3 class="case-title">FairShare: Multi-Party Debt Minimizer</h3>
+
+            <div class="triad-container">
+              <div class="triad-box problem">
+                <div class="triad-title">
+                  <span class="triad-icon">🚨</span>
+                  <span>The Real-World Problem</span>
+                </div>
+                <p class="triad-text">
+                  College students sharing flats and hackathon groups in Pune/Jaipur end up with dozens of tangled micro-debts (groceries, WiFi, food orders), leading to payment confusion, awkward disputes, and multiple banking fee penalties.
+                </p>
+              </div>
+
+              <div class="triad-box solution">
+                <div class="triad-title">
+                  <span class="triad-icon">⚙️</span>
+                  <span>Engineering Solution</span>
+                </div>
+                <p class="triad-text">
+                  Engineered a greedy graph debt-cancellation algorithm that computes net balances for all parties and matches maximum creditors with maximum debtors, shrinking an $O(N^2)$ transaction mesh down to at most $N-1$ optimal transfers.
+                </p>
+              </div>
+
+              <div class="triad-box impact">
+                <div class="triad-title">
+                  <span class="triad-icon">📈</span>
+                  <span>Measurable Impact</span>
+                </div>
+                <p class="triad-text">
+                  Reduces bank transfers by an average of 65%. Generates instant settlement links, eliminating friendship friction over shared student expenses.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-tech-footer">
+              <div class="case-tags">
+                <span class="tag">Greedy Algorithms</span>
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">Graph Simplification</span>
+                <span class="tag">FinTech UX</span>
+              </div>
+              <a href="#hero-sandbox" class="case-action-btn" onclick="switchDeckTab('debt')">
+                <span>Try Debt Calculator &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 4: OpenFirst - Open Source Contributor Onboarding -->
+          <article class="case-card glass-panel">
+            <div class="case-header">
+              <div class="case-number">CASE 04</div>
+              <div class="case-tag">Python &bull; Git &bull; Community Engineering</div>
+            </div>
+
+            <h3 class="case-title">OpenFirst: Beginner Open-Source Triage Engine</h3>
+
+            <div class="triad-container">
+              <div class="triad-box problem">
+                <div class="triad-title">
+                  <span class="triad-icon">🚨</span>
+                  <span>The Real-World Problem</span>
+                </div>
+                <p class="triad-text">
+                  Over 75% of computer science students who want to contribute to open source quit before their first pull request due to intimidating PR etiquette, obscure build setups, and fear of git merge conflicts.
+                </p>
+              </div>
+
+              <div class="triad-box solution">
+                <div class="triad-title">
+                  <span class="triad-icon">⚙️</span>
+                  <span>Engineering Solution</span>
+                </div>
+                <p class="triad-text">
+                  Built a lightweight Python utility and interactive guide that parses GitHub API for verified 'good first issue' tickets, generates step-by-step local branching scripts, and automates pre-PR lint checks.
+                </p>
+              </div>
+
+              <div class="triad-box impact">
+                <div class="triad-title">
+                  <span class="triad-icon">📈</span>
+                  <span>Measurable Impact</span>
+                </div>
+                <p class="triad-text">
+                  Directly guided 15+ student peers at Newton School to merge their first validated open-source commits. Fostered a supportive campus dev circle.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-tech-footer">
+              <div class="case-tags">
+                <span class="tag">Python</span>
+                <span class="tag">GitHub API</span>
+                <span class="tag">Git Automation</span>
+                <span class="tag">Peer Mentoring</span>
+                <span class="tag">Community</span>
+              </div>
+              <a href="https://linkedin.com/in/ajay-gurjar-a28b0031b" target="_blank" rel="noopener noreferrer" class="case-action-btn">
+                <span>Discuss on LinkedIn &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;arsenal /&gt;</p>
+          <h2 class="section-title">Technical & Professional <span class="gradient-text">Skills</span></h2>
+          <p class="section-desc">
+            A comprehensive engineering toolkit refined through daily coding, algorithmic challenges, and team collaboration.
+          </p>
+          <div class="section-underline"></div>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skill-tabs-wrapper">
+          <div class="skill-tabs" role="tablist">
+            <button class="skill-tab active" data-filter="all">All Skills</button>
+            <button class="skill-tab" data-filter="programming">Languages</button>
+            <button class="skill-tab" data-filter="web">Web & Frontend</button>
+            <button class="skill-tab" data-filter="cs-core">CS Fundamentals</button>
+            <button class="skill-tab" data-filter="tools">Tools & Workflow</button>
+            <button class="skill-tab" data-filter="soft">Professional & Soft</button>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          
+          <!-- C++ -->
+          <div class="skill-card glass-panel" data-category="programming cs-core">
+            <div class="skill-top">
+              <div class="skill-icon-box cpp-icon"><span>C++</span></div>
+              <span class="skill-badge">Core Language</span>
+            </div>
+            <h3 class="skill-name">C++ & OOP</h3>
+            <p class="skill-desc">Object-oriented programming, memory management, pointers, and foundational data structures.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 84%;"></div></div>
+            <span class="skill-level-text">Proficient &bull; Problem Solving</span>
+          </div>
+
+          <!-- Python -->
+          <div class="skill-card glass-panel" data-category="programming">
+            <div class="skill-top">
+              <div class="skill-icon-box python-icon"><span>Py</span></div>
+              <span class="skill-badge">Scripting & Logic</span>
+            </div>
+            <h3 class="skill-name">Python</h3>
+            <p class="skill-desc">Algorithmic problem solving, automated scripts, API scraping, and rapid prototyping.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+            <span class="skill-level-text">Proficient &bull; Data & Automation</span>
+          </div>
+
+          <!-- HTML5 & Semantic Web -->
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-top">
+              <div class="skill-icon-box html-icon"><span>&lt;&gt;</span></div>
+              <span class="skill-badge">Frontend</span>
+            </div>
+            <h3 class="skill-name">HTML5 & Semantic UI</h3>
+            <p class="skill-desc">Semantic markup, accessibility standards (ARIA), SEO best practices, and fast DOM structure.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            <span class="skill-level-text">Advanced &bull; Clean Architecture</span>
+          </div>
+
+          <!-- CSS3 & Responsive Design -->
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-top">
+              <div class="skill-icon-box css-icon"><span>#</span></div>
+              <span class="skill-badge">Frontend</span>
+            </div>
+            <h3 class="skill-name">CSS3 & Responsive Design</h3>
+            <p class="skill-desc">CSS Grid, Flexbox, custom properties, glassmorphism, keyframe physics, and dark mode theming.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+            <span class="skill-level-text">Advanced &bull; Modern Styling</span>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="skill-card glass-panel" data-category="web programming">
+            <div class="skill-top">
+              <div class="skill-icon-box js-icon"><span>JS</span></div>
+              <span class="skill-badge">Core Web</span>
+            </div>
+            <h3 class="skill-name">JavaScript (ES6+)</h3>
+            <p class="skill-desc">DOM manipulation, asynchronous fetch APIs, event dispatching, canvas graphics, and interactive logic.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            <span class="skill-level-text">Proficient &bull; Interactive Apps</span>
+          </div>
+
+          <!-- Scratch Platform / Game Dev -->
+          <div class="skill-card glass-panel" data-category="tools cs-core">
+            <div class="skill-top">
+              <div class="skill-icon-box scratch-icon"><span>🎮</span></div>
+              <span class="skill-badge">Game Logic</span>
+            </div>
+            <h3 class="skill-name">Scratch Game Platform</h3>
+            <p class="skill-desc">Visual scripting, event loops, physics/collision detection, sprite coordination, and team builds.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+            <span class="skill-level-text">Expert &bull; Game Development Lead</span>
+          </div>
+
+          <!-- Data Structures & Algorithms -->
+          <div class="skill-card glass-panel" data-category="cs-core">
+            <div class="skill-top">
+              <div class="skill-icon-box dsa-icon"><span>{;}</span></div>
+              <span class="skill-badge">Fundamentals</span>
+            </div>
+            <h3 class="skill-name">Data Structures & Algorithms</h3>
+            <p class="skill-desc">Arrays, linked lists, stacks, queues, recursion, sorting, searching, and time complexity analysis.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+            <span class="skill-level-text">Intermediate &bull; Active Practice</span>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="skill-card glass-panel" data-category="tools">
+            <div class="skill-top">
+              <div class="skill-icon-box git-icon"><span>⑂</span></div>
+              <span class="skill-badge">DevOps / VCS</span>
+            </div>
+            <h3 class="skill-name">Git & GitHub</h3>
+            <p class="skill-desc">Version control, branching, pull requests, merge conflict resolution, and collaborative repo workflows.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 84%;"></div></div>
+            <span class="skill-level-text">Proficient &bull; Open Source Ready</span>
+          </div>
+
+          <!-- Problem Solving & Analytical Thinking -->
+          <div class="skill-card glass-panel" data-category="cs-core soft">
+            <div class="skill-top">
+              <div class="skill-icon-box logic-icon"><span>💡</span></div>
+              <span class="skill-badge">Core Strength</span>
+            </div>
+            <h3 class="skill-name">Problem Solving</h3>
+            <p class="skill-desc">Deconstructing complex requirements into simple, verifiable modules and optimizing edge cases.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+            <span class="skill-level-text">High Aptitude &bull; Analytical</span>
+          </div>
+
+          <!-- Leadership & Teamwork -->
+          <div class="skill-card glass-panel" data-category="soft">
+            <div class="skill-top">
+              <div class="skill-icon-box team-icon"><span>👥</span></div>
+              <span class="skill-badge">Interpersonal</span>
+            </div>
+            <h3 class="skill-name">Team Collaboration & Leadership</h3>
+            <p class="skill-desc">Sprint coordination, cross-member mentoring, inclusive consensus building, and team harmony.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            <span class="skill-level-text">Exemplary &bull; Team Player</span>
+          </div>
+
+          <!-- Communication -->
+          <div class="skill-card glass-panel" data-category="soft">
+            <div class="skill-top">
+              <div class="skill-icon-box comm-icon"><span>💬</span></div>
+              <span class="skill-badge">Core Strength</span>
+            </div>
+            <h3 class="skill-name">Communication</h3>
+            <p class="skill-desc">Clear technical presentations, documentation, empathetic listening, and cross-cultural fluency.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+            <span class="skill-level-text">Standout &bull; Articulate</span>
+          </div>
+
+          <!-- Creative Photography -->
+          <div class="skill-card glass-panel" data-category="soft">
+            <div class="skill-top">
+              <div class="skill-icon-box photo-icon"><span>📷</span></div>
+              <span class="skill-badge">Creative</span>
+            </div>
+            <h3 class="skill-name">Photography & Visual Arts</h3>
+            <p class="skill-desc">Composition, color grading, perspective framing, and keen eye for design aesthetics & UI detail.</p>
+            <div class="skill-progress-bar"><div class="skill-progress" style="width: 86%;"></div></div>
+            <span class="skill-level-text">Creative Passion &bull; Visual Flair</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & TIMELINE -->
+    <section class="experience section" id="education">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;milestones /&gt;</p>
+          <h2 class="section-title">Education & <span class="gradient-text">Experience</span></h2>
+          <p class="section-desc">My academic foundation and hands-on project leadership journey.</p>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1: Newton School of Technology -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-category badge-edu">Education</span>
+                <span class="timeline-period">08/2026 - Present &bull; Pune, India</span>
+              </div>
+              <h3 class="timeline-title">Computer Science Student</h3>
+              <h4 class="timeline-org">Newton School of Technology &bull; DY Patil University</h4>
+              <p class="timeline-text">
+                Enrolled in an intensive, industry-aligned Computer Science curriculum focused on software engineering practices, 
+                Data Structures, Algorithms, full-stack technologies, and collaborative software projects.
+              </p>
+              <div class="timeline-badges">
+                <span class="t-badge">Computer Science</span>
+                <span class="t-badge">DSA</span>
+                <span class="t-badge">Software Engineering</span>
+                <span class="t-badge">Pune, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Game Development Project -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-category badge-exp">Experience & Projects</span>
+                <span class="timeline-period">08/2026 &bull; Pune, India</span>
+              </div>
+              <h3 class="timeline-title">Game Development on Scratch Platform</h3>
+              <h4 class="timeline-org">Personal & Team Projects</h4>
+              <p class="timeline-text">
+                Successfully architected and delivered a multi-level interactive game with a team. 
+                Learned end-to-end team coordination, agile sprint discussions, problem solving under constraints, 
+                and translating game mechanics into responsive visual code.
+              </p>
+              <div class="timeline-badges">
+                <span class="t-badge">Team Leadership</span>
+                <span class="t-badge">Scratch Platform</span>
+                <span class="t-badge">Game Logic</span>
+                <span class="t-badge">Problem Solving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I SPLIT MY TIME (Interactive Donut & Cards from Resume) -->
+    <section class="time-split section" id="time-split">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;routine /&gt;</p>
+          <h2 class="section-title">How I <span class="gradient-text">Split My Time</span></h2>
+          <p class="section-desc">
+            Balancing technical excellence, continuous growth, community connections, and active pursuits.
+          </p>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="split-layout">
+          <!-- Left: Interactive Donut Chart Visualizer -->
+          <div class="donut-container glass-panel">
+            <div class="donut-chart-wrapper">
+              <svg class="donut-svg" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="70" fill="transparent" stroke="rgba(255,255,255,0.05)" stroke-width="26" />
+                
+                <!-- A: Learning coding languages (28%) -->
+                <circle class="donut-segment seg-a" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#00F0FF" stroke-width="26" stroke-dasharray="123 317" stroke-dashoffset="0" data-label="Learning Coding Languages (28%)"></circle>
+                
+                <!-- B: Continuous education (20%) -->
+                <circle class="donut-segment seg-b" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#7000FF" stroke-width="26" stroke-dasharray="88 352" stroke-dashoffset="-123" data-label="Continuous Education (20%)"></circle>
+
+                <!-- C: Contributing to Open Source (16%) -->
+                <circle class="donut-segment seg-c" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#00E599" stroke-width="26" stroke-dasharray="70 370" stroke-dashoffset="-211" data-label="Open Source Contribution (16%)"></circle>
+
+                <!-- D: Building Network (14%) -->
+                <circle class="donut-segment seg-d" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#FFB800" stroke-width="26" stroke-dasharray="62 378" stroke-dashoffset="-281" data-label="Building Network (14%)"></circle>
+
+                <!-- E: Playing Basketball (12%) -->
+                <circle class="donut-segment seg-e" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#FF007A" stroke-width="26" stroke-dasharray="53 387" stroke-dashoffset="-343" data-label="Playing Basketball (12%)"></circle>
+
+                <!-- F: Meeting New People (10%) -->
+                <circle class="donut-segment seg-f" cx="100" cy="100" r="70" fill="transparent" 
+                        stroke="#6366F1" stroke-width="26" stroke-dasharray="44 396" stroke-dashoffset="-396" data-label="Meeting New People (10%)"></circle>
+              </svg>
+
+              <!-- Center Display -->
+              <div class="donut-center-info">
+                <span class="donut-center-letter" id="donut-center-icon">⚡</span>
+                <span class="donut-center-text" id="donut-center-title">Hover Segment</span>
+              </div>
+            </div>
+            
+            <p class="donut-hint">Interactive chart: hover or click segments to inspect breakdown</p>
+          </div>
+
+          <!-- Right: Interactive Activity Cards -->
+          <div class="activities-grid">
+            <div class="activity-card glass-panel" data-segment="seg-a">
+              <div class="act-letter bg-cyan">A</div>
+              <div class="act-details">
+                <h4 class="act-title">Learning Coding Languages</h4>
+                <p class="act-desc">Dedicated daily sessions practicing C++, Python, and modern JavaScript syntax.</p>
+              </div>
+            </div>
+
+            <div class="activity-card glass-panel" data-segment="seg-b">
+              <div class="act-letter bg-purple">B</div>
+              <div class="act-details">
+                <h4 class="act-title">Continuous Education</h4>
+                <p class="act-desc">Newton School of Technology lectures, computer science coursework, and tech tutorials.</p>
+              </div>
+            </div>
+
+            <div class="activity-card glass-panel" data-segment="seg-c">
+              <div class="act-letter bg-green">C</div>
+              <div class="act-details">
+                <h4 class="act-title">Open Source Contributions</h4>
+                <p class="act-desc">Studying open source codebases, exploring issues, and crafting meaningful pull requests.</p>
+              </div>
+            </div>
+
+            <div class="activity-card glass-panel" data-segment="seg-d">
+              <div class="act-letter bg-yellow">D</div>
+              <div class="act-details">
+                <h4 class="act-title">Building Network</h4>
+                <p class="act-desc">Connecting with fellow developers, mentors, industry engineers, and student leaders.</p>
+              </div>
+            </div>
+
+            <div class="activity-card glass-panel" data-segment="seg-e">
+              <div class="act-letter bg-pink">E</div>
+              <div class="act-details">
+                <h4 class="act-title">Playing Basketball</h4>
+                <p class="act-desc">High-energy team sports that sharpen on-court communication, agility, and stamina.</p>
+              </div>
+            </div>
+
+            <div class="activity-card glass-panel" data-segment="seg-f">
+              <div class="act-letter bg-indigo">F</div>
+              <div class="act-details">
+                <h4 class="act-title">Meeting New People</h4>
+                <p class="act-desc">Engaging with diverse perspectives, campus communities, and creative minds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-subtitle">&lt;get-in-touch /&gt;</p>
+          <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+          <p class="section-desc">
+            Ready to solve real-world problems with your team? Let's connect.
+          </p>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Left: Contact Details Card -->
+          <div class="contact-info-card glass-panel">
+            <h3 class="contact-card-title">Let's build something impactful together!</h3>
+            <p class="contact-card-text">
+              Looking for an eager Software Developer Intern, a collaborative teammate for hackathons, 
+              or wanting to discuss game development and algorithmic solutions? Reach out directly:
+            </p>
+
+            <div class="contact-channel-list">
+              <!-- Email -->
+              <a href="mailto:ajaygurjar7227@gmail.com" class="channel-item">
+                <div class="channel-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="channel-data">
+                  <span class="channel-label">Email</span>
+                  <span class="channel-value">ajaygurjar7227@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/ajay-gurjar-a28b0031b" target="_blank" rel="noopener noreferrer" class="channel-item">
+                <div class="channel-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.54a1.69 1.69 0 1 0 0-3.38 1.69 1.69 0 0 0 0 3.38m1.4 9.96v-8.37H5.06v8.37h2.8z"/>
+                  </svg>
+                </div>
+                <div class="channel-data">
+                  <span class="channel-label">LinkedIn</span>
+                  <span class="channel-value">linkedin.com/in/ajay-gurjar-a28b0031b</span>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="channel-item non-link">
+                <div class="channel-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="channel-data">
+                  <span class="channel-label">Locations</span>
+                  <span class="channel-value">Pune &bull; Jaipur, India</span>
+                </div>
+              </div>
+
+              <!-- Education Campus -->
+              <div class="channel-item non-link">
+                <div class="channel-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div class="channel-data">
+                  <span class="channel-label">University</span>
+                  <span class="channel-value">Newton School of Technology, DY Patil University</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-action-box">
+              <span class="status-indicator-ping"></span>
+              <span>Available for internships & problem-solving collaborations</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-card glass-panel">
+            <h3 class="form-title">Send a Direct Message</h3>
+            
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="user_name" class="form-label">Your Name <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="user_name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                    <span class="input-focus-border"></span>
+                  </div>
+                  <span class="error-msg" id="name-error">Please enter your name</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="user_email" class="form-label">Your Email <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <input type="email" id="user_email" name="email" class="form-input" placeholder="e.g. rahul@company.com" required>
+                    <span class="input-focus-border"></span>
+                  </div>
+                  <span class="error-msg" id="email-error">Please enter a valid email</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="user_subject" class="form-label">Problem / Project Opportunity</label>
+                <div class="input-wrapper">
+                  <input type="text" id="user_subject" name="subject" class="form-input" placeholder="e.g. Internship Opportunity / Hackathon Team / Project Inquiry">
+                  <span class="input-focus-border"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="user_message" class="form-label">Message <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <textarea id="user_message" name="message" class="form-textarea" rows="5" placeholder="Describe the challenge, team role, or idea you'd like to collaborate on..." required></textarea>
+                  <span class="input-focus-border"></span>
+                </div>
+                <span class="error-msg" id="message-error">Please enter your message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loader" style="display: none;">
+                  <svg class="spinner" width="20" height="20" viewBox="0 0 50 50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                  </svg>
+                </span>
+                <svg class="btn-send-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+
+            <div class="form-notification success" id="form-success-banner" style="display: none;">
+              <div class="notif-icon">🎉</div>
+              <div class="notif-text">
+                <h4>Message Ready to Send!</h4>
+                <p>Opening your email client to send this message to <strong>ajaygurjar7227@gmail.com</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-username">@ajaygurjar</span>
+          <span class="logo-slash">/</span>
+          <span class="logo-bracket">&gt;</span>
+        </a>
+        <p class="footer-tagline">
+          Computer Science Student &bull; Newton School of Technology &bull; DY Patil University, Pune
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#hero-sandbox">Live Sandbox</a>
+        <a href="#about">About & Bento</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> Ajay Gurjar. Handcrafted with Modern HTML5 Canvas, CSS3 & JavaScript.
+        </p>
+        <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
